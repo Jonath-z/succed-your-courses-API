@@ -1,4 +1,4 @@
-import get_JWT_Token from "../middleware/asyncHandler/getToken";
+import get_JWT_Token from "../middleware/jwt/getToken";
 import { Router } from "express";
 
 export class Get_JWT_Token {
