@@ -15,13 +15,15 @@ const JWT_Verify_Token = (
     jwt.verify(token, jwt_secretKey, (err, auth) => {
         if (err) {
             res.json({
-                experied: true
+                experied: true,
             })
             throw err;
         } 
         else {
+            // console.log('okey');
             res.json({
-                experied: false
+                experied: false,
+                auth
             });
         }
     });

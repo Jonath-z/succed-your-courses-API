@@ -20,7 +20,7 @@ const get_JWT_Token = async (
         id
     }
 
-    jwt.sign({ user }, jwt_secretKey, { expiresIn: '5min' }, (err, token) => {
+    jwt.sign({ user }, jwt_secretKey, { expiresIn: '30 days' }, (err, token) => {
         if (err) throw err;
         res.json({
             token
