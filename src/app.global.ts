@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-// import cors from 'cors';
+import cors from 'cors';
 import { routes } from './routes';
 
 export class App{
@@ -16,12 +16,7 @@ export class App{
     private initilizeMiddleware(): void{
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
-        this.app.use((req, res, next ) => {
-            res.setHeader("Access-Control-Allow-Origin", "*");
-            res.setHeader('Access-Control-Allow-Methods', '*');
-            res.setHeader("Access-Control-Allow-Headers", "*");
-            next();
-        });
+        this.app.use(cors());
     }
 
     private initializeRoutes(routes: any[]): void {
